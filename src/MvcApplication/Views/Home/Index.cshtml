@@ -1,7 +1,16 @@
-﻿
+﻿@model global::MvcApplication.Models.SampleModel
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummaryView("_ErrorView")
+    
+    @Html.TextBoxFor(m => m.Name)
+
+    <button type="submit">Submit</button>
+}
